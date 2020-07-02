@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>编辑学期工作表</title>
+
+</head>
+<body onload="a()">
+ <div id="page-wrapper">
+    <div class="graphs">
+      <div class="panel panel-default">
+        <div class="panel-heading page-title">编辑学期工作表</div>
+      </div>
+      
+      <div class="container">
+      <form method="post">
+      <table>
+        <tr>
+        <th>周次</th>
+        <th>内容</th>
+        <th>提交文件类型</th>
+        <th>截止日期</th>
+        </tr>
+        <foreach name='dt' item="d">
+        <tr>
+          <td><input type="text" name="swweek[]" value="{$d['swweek']}"></td>
+          <td><input type="text" name="swcontent[]" value="{$d['swcontent']}"></td>
+          <td>
+            <input type="hidden" name="fv" value="{$d['ftid']}">
+            <select class="evaluate_select" name="ftid[]" >
+              <option id="0" value="0">无提交文件</option>';
+              <option id="1" value="1">电子</option>';
+              <option id="2" value="2">纸质</option>';
+              <option id="3" value="3">电子+纸质</option>'; 
+
+            </select></td>
+          <td><input type="date" name="swfinishdate[]" value="{$d['swfinishdate']}"></td>
+        </tr>
+      </foreach>
+      </table>
+      <input type="submit"  value="保存">
+      </form>
+      <button><a href="__MODULE__/Work/work_table">返回</a></button>
+      </div>
+    </div>
+  </div>
+  <script src="__PUBLIC__/Admin/js/jQuery.min.js"></script>
+  <script type="text/javascript">
+  function a() {
+    for(var i=0;i<20;i++){
+       var v = document.getElementsByName("fv")[i].value;
+        if(v=="1"){
+          document.getElementsByName("ftid[]")[i].value=v;        
+       }else if(v=="2"){
+          document.getElementsByName("ftid[]")[i].value=v;
+       }else if(v=="3"){
+          document.getElementsByName("ftid[]")[i].value=v;
+       }else{
+          return;
+       }
+       
+
+      
+     } 
+  }
+
+   
+  </script>
+  <!-- page-wrapper结束 -->
+</body>
+</html>

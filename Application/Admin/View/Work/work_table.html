@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>学期工作表</title>
+</head>
+<body>
+ <div id="page-wrapper">
+    <div class="graphs">
+      <div class="panel panel-default">
+        <div class="panel-heading page-title">学期工作表</div>
+      </div>
+      
+      <div class="container">
+         <div>
+                  <button ><a href="__MODULE__/Work/make_work_table">新建</a></button> 
+                  <form id="form" method="post" action=""> 
+                  <button  type="submit" ><a href="__MODULE__/Work/change_work_table">编辑</a></button>
+                  </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            	<div class="panel panel-default snewsTitle">
+                <div class="panel-heading">
+                  <div id="divcss5">
+                   
+                    <select name='year'>
+                      <foreach name='years' item="v">
+                      <option value="{$v['0']}" selected="selected">{$v['0']}</option>
+                      </foreach>
+                    </select>
+
+                    <select name='term'>
+                      <option value="1"selected="selected">第一学期</option>
+                      <option value="2">第二学期</option>
+                    </select>
+                    <button  type="submit" >确定</button>
+                    <button  type="submit" ><a href="__CONTROLLER__/make_work_status">发布</a></button>
+                    </form>
+
+                  </div>
+                </div>
+          
+            </div>
+          </div>
+          <div class="col-md-6">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                工作表
+                </div>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                      <span class=""></span>&nbsp;&nbsp;周次</span>
+                      <span class=""></span>&nbsp;&nbsp;内容</span>
+                      <span class=""></span>&nbsp;&nbsp;提交文件类型</span> 
+                      <span class=""></span>&nbsp;&nbsp;截止日期</span>
+
+                  </li>
+
+                  <foreach name="dt" item="d">                      
+                  <li class="list-group-item">
+                      <span class=""></span>&nbsp;&nbsp;{$d['swweek']}</span>
+                      <span class=""></span>&nbsp;&nbsp;{$d['swcontent']}</span>
+                      <span class=""></span>&nbsp;&nbsp;{$d['ftid']}</span>
+                      <span class=""></span>&nbsp;&nbsp;{$d['swfinishdate']}</span>
+                  </li>
+                  </foreach>
+                  
+
+                </ul>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- page-wrapper结束 -->
+</body>
+</html>

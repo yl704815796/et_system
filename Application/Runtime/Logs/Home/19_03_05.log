@@ -1,0 +1,15 @@
+[ 2019-03-05T10:06:01+08:00 ] 172.16.122.194 /project/Home/User/user
+ERR: 模板不存在:./Application/Home/View/User/1703.html
+
+[ 2019-03-05T10:06:26+08:00 ] 172.16.122.194 /project/Home/User/user
+ERR: 模板不存在:./Application/Home/View/Array.html
+
+[ 2019-03-05T14:45:21+08:00 ] 192.168.43.118 /project/Home/Work/upload_file.html
+ERR: 非法操作:upload_file
+
+[ 2019-03-05T15:08:35+08:00 ] 192.168.43.118 /project/Home/Index/upload_file.html
+ERR: 非法操作:upload_file
+
+[ 2019-03-05T15:50:34+08:00 ] 192.168.43.118 /project/Home/User/MODULE/User/user
+ERR: 非法操作:MODULE
+

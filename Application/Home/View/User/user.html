@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+</head>
+<body>
+<div id="page-wrapper">
+    <div class="graphs">
+      <div class="panel panel-default">
+        <div class="panel-heading page-title">个人信息</div>
+      </div>
+      <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+              <ul class="nav nav-tabs">
+                <li class="active">
+                  <a href="MODULE/User/user">基础信息</a>
+                </li>
+                <!--  <li>
+                  <a href="#" role="button" data-toggle="modal" data-target="#myModal">修改信息</a>
+                </li>-->
+              </ul>
+             
+
+              <table class="table table-hover">
+              
+                <tbody>
+                  <tr>
+                    <th scope="row">工号</th>
+                    <td>{$dt.tid}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">姓名</th>
+                    <td>{$dt.tname}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">手机</th>
+                    <td>{$dt.tphone }</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">QQ</th>
+                    <td>{$dt.tQQ}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">邮箱</th>
+                    <td>{$dt.temail}</td>
+                  </tr>
+                </tbody>
+                
+              </table>
+             
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

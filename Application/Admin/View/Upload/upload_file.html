@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>教务管理系统-文件上传</title>
+</head>
+<body>
+
+  <!-- page-wrapper开始 -->
+  <div id="page-wrapper">
+    <div class="graphs">
+      <div class="panel panel-default">
+        <div class="panel-heading page-title">文件上传</div>
+      </div>
+      <div class="container">
+        <form action="" method="post" enctype="multipart/form-data">
+            
+                <select name="fsid">
+                    <option>选择上传目录</option>
+                <foreach name="fs" item="f">
+                    <option value="{$f.fsid}">
+                        {$f.fsname}
+                    </option>
+                </foreach>
+                </select>
+            <input type="file" name="files">
+            <input type="submit" value="上传">
+        </form>
+        {$res}
+                </div>
+          </div>
+        </div>
+      </body>
+      </html>
+
+   

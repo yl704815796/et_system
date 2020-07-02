@@ -1,0 +1,170 @@
+/*
+* @Author: Waylon
+* @Date:   2019-03-12 16:24:49
+* @Last Modified by:   Waylon
+* @Last Modified time: 2019-03-17 18:32:28
+*/
+body{
+    font-family: 'Microsoft YaHei', sans-serif;
+    background: #f2f4f8;
+}
+#wrapper{
+    width: 100%;
+}
+
+/*导航开始*/
+@media (max-width: 736px){
+    .navbar-right{
+        display: none;
+    }
+
+}
+.navbar-default{
+    background-color: #2368c3;
+    border: none;
+    box-shadow: 0px 2px 8px 0px rgba(50,50,50,0.25);
+}
+.navbar-form{
+    border:none;
+}
+.navbar-default .navbar-brand {
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    height: 70px;
+    line-height: 35px;
+}
+.navbar-default .navbar-form{
+    border-top:none;
+    padding-top:8px;
+}
+.navbar-default .navbar-nav>li>a {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    height: 70px;
+    line-height: 35px;
+}
+.navbar-default .navbar-nav>li>a:hover{
+    color: #fff;
+}
+.navbar-toggle{
+    margin-top: 17px;
+}
+.navbar-default .navbar-toggle:hover {
+    border-color: #40D2B1;
+    background-color: #fff;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #1C9982;
+}
+/*导航结束*/
+
+/*sidebar开始*/
+@media(min-width:768px) {
+    .sidebar {
+        z-index: 1;
+        position: absolute;
+        width: 300px;
+        margin-top:70px;
+        min-height:1200px;
+    }
+}
+
+.navbar-default.sidebar {
+    background-color: #343345;
+    font-family: 'Roboto', sans-serif;
+}
+#side-menu li{
+    padding:10px;
+}
+/*sidebar结束*/
+
+/*page-wrapper开始*/
+@media(min-width:768px) {
+    #page-wrapper {
+        position: inherit;
+        margin: 0 0 0 300px;
+        /*--padding: 0 30px;--*/
+        border-left: 1px solid #e7e7e7;
+    }
+}
+@media (max-width: 1024px){
+    #page-wrapper {
+        background: #f2f4f8;
+    }
+}
+#page-wrapper {
+    /*--padding: 0 15px;--*/
+    min-height: 568px;
+    background-color:#f2f4f8;
+}
+
+.graphs{
+    margin-top:70px;
+   /* padding: 0.5em 0em;*/
+    background: #f2f4f8;
+    font-family: 'Roboto', sans-serif;
+}
+@media (max-width: 736px){
+    .graphs{
+        margin-top:181px;
+    }
+
+}
+.graphs .panel .page-title{
+    background-color: #fff;
+    font-size: 24px;
+}
+.graphs .container{
+    background-color: #fff;
+}
+.graphs .container .row{
+    margin-top: 20px;
+}
+/*New News*/
+.news_Title{
+    text-align:center;
+    color:#000;
+    font-size: 24px;
+    text-align: center;
+}
+.news_Info{
+    font-size:16px;
+    text-align: center;
+}
+#line{
+     height:1px;
+     border:solid 1px #ddd;
+     margin:3%;
+}
+#neirong{
+    margin:3%;
+}
+/*page-wrapper结束*/
+.gcs-radio {
+    display: none;
+}
+.gcs-radio+label {
+    width: 20px;
+    height: 20px;
+    line-height: 15px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: bottom;
+    border: 1px solid gray;
+    border-radius: 50%;
+}
+.gcs-radio+label:hover {
+    border: 1px solid #2783FB;
+    cursor: pointer;
+}
+.gcs-radio:checked+label {
+    background: #2783FB;
+    border: 1px solid #2783FB;
+}
+.gcs-radio:checked+label:after {
+    content: "\2022";
+    font-size: 32px;
+    color: white;
+}

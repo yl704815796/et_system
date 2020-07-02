@@ -1,0 +1,12 @@
+[ 2020-06-19T17:15:24+08:00 ] ::1 /et_system/
+ERR: Think\Controller:checkVerify方法不存在！
+
+[ 2020-06-19T17:15:46+08:00 ] ::1 /et_system/
+ERR: 系统不支持:mysqli
+
+[ 2020-06-19T17:17:51+08:00 ] ::1 /et_system/
+ERR: 系统不支持:mysqli
+
+[ 2020-06-19T17:17:57+08:00 ] ::1 /et_system/
+ERR: 系统不支持:mysqli
+

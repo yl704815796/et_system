@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>教务管理系统-目录列表</title>
+</head>
+<body>
+<div id="page-wrapper">
+    <div class="graphs">
+      <div class="panel panel-default">
+        <div class="panel-heading page-title">目录列表</div>
+        <div class="container">
+
+        <div>
+          <form method="post">
+          <input type="text" name="addCatalog" maxlength="10">
+          <select name="fsupload">
+           <option  value="0">老师可上传文件夹</option>
+           <option  value="1">老师不可上传的文件夹</option>
+          </select>
+          <input type="submit" value="添加目录" />
+          
+          </form>
+        </div>
+       <table>
+       <foreach name="fs" item="f">
+       <tr>
+       <td>{$f.fsid}</td>
+       <td>{$f.fsname}</td>
+       <td>{$f.fsupload}</td>
+       </tr>
+       </foreach>
+       </table>
+       </div>
+       
+        </div>
+        </div>
+        </div>
+        </div>
+</body>
+</html>

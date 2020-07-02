@@ -1,0 +1,39 @@
+[ 2019-03-03T10:46:51+08:00 ] 172.16.122.194 /project/Login/login.html
+ERR: Think\Model:checkUser方法不存在！
+
+[ 2019-03-03T10:48:59+08:00 ] 172.16.122.194 /project/Login/login.html
+ERR: Think\Model:checkUser方法不存在！
+
+[ 2019-03-03T10:51:28+08:00 ] 172.16.122.194 /project/Login/login.html
+ERR: Think\Model:checkUser方法不存在！
+
+[ 2019-03-03T10:51:52+08:00 ] 172.16.122.194 /project/Login/login.html
+ERR: Think\Model:checkUser方法不存在！
+
+[ 2019-03-03T11:07:51+08:00 ] 172.16.122.194 /project/Login/login.html
+ERR: Think\Model:checkUser方法不存在！
+
+[ 2019-03-03T15:30:52+08:00 ] 172.16.122.194 /project/User/login.html
+ERR: 非法操作:login
+
+[ 2019-03-03T15:31:12+08:00 ] 172.16.122.194 /project/User/login.html
+ERR: 非法操作:login
+
+[ 2019-03-03T15:31:16+08:00 ] 172.16.122.194 /project/User/login.html
+ERR: 非法操作:login
+
+[ 2019-03-03T15:31:30+08:00 ] 172.16.122.194 /project/User/login.html
+ERR: 非法操作:login
+
+[ 2019-03-03T15:31:30+08:00 ] 172.16.122.194 /project/User/login.html
+ERR: 非法操作:login
+
+[ 2019-03-03T15:31:30+08:00 ] 172.16.122.194 /project/User/login.html
+ERR: 非法操作:login
+
+[ 2019-03-03T16:24:02+08:00 ] 172.16.122.194 /project/Home/User/user_infor.html
+ERR: 非法操作:user_infor
+
+[ 2019-03-03T16:24:12+08:00 ] 172.16.122.194 /project/Home/User/user_infor.html
+ERR: 非法操作:user_infor
+

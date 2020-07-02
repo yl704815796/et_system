@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script type="text/javascript" src="http://172.16.122.194/et_system/test.php"></script>
+  <script type="text/javascript" charset="utf-8">
+    function show_news(){
+      var news = document.getElementById("news");
+      news.style.display = "block";
+    }
+    // 用户点击新闻列表项后触发此操作,实现的功能是显示相应的新闻内容
+    function show_new(i){
+      // 显示新闻内容页
+      show_news();
+      // 将新闻内容加到页面上
+      show(i);
+    }
+    // 将相应的新闻内容加载到屏幕上,其中id的值为新闻编号
+    function show(id){
+      // 显示新闻标题
+      document.getElementById("news_Title").innerHTML=json[id].title;
+      // 显示新闻内容
+      document.getElementById("neirong").innerHTML=json[id].content;
+      // 获取新闻作者以及发布时间信息
+      var info = "作者: "+json[id].author+"&nbsp;&nbsp;发表日期: "+json[id].date;
+      // 将新闻作者以及发布时间等信息显示出来
+      document.getElementById("news_Info").innerHTML=info;
+    }
+  </script>
+</head>
+<body>
+
+<!-- page-wrapper开始 -->
+<div id="page-wrapper">
+  <div class="graphs">
+    <div class="panel panel-default">
+      <div class="panel-heading page-title">新闻公告</div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-default snewsTitle">
+            <div class="panel-heading">
+              最新公告
+            </div>
+            <div class="content" id="news">
+              <h1 id="news_Title" class="news_Title">新闻题目</h1>
+              <h4 id="news_Info" class="news_Info">作者: Waylon&nbsp;&nbsp;发表时间: 2019-3-14</h4>
+              <div id="line"></div>
+              <div id="neirong">正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容正文内容</div>
+            </div>
+          </div>
+          <div class="panel panel-default snewsTitle">
+            <div class="panel-heading">
+              华软要闻
+              <a href="#" class="pull-right">更多&gt;</a>
+            </div>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <a href="index.html">
+                  <span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;关于召开2017年教学质量年度报告数据内容分工工作会议。<small class="pull-right"> 2018-3-20</small>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a href="index.html">
+                  <span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;关于召开2017年教学质量年度报告数据内容分工工作会议。<small class="pull-right"> 2018-3-20</small>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a href="index.html">
+                  <span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;关于召开2017年教学质量年度报告数据内容分工工作会议。<small class="pull-right"> 2018-3-20</small>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              教师公告
+              <a href="#" class="pull-right">更多&gt;</a>
+            </div>
+            <ul class="list-group">
+              <script>
+                for(i=0; i<json.length; i++) {
+                  str = "";
+                  // 生成<li class="list-group-item" onclick="show_new();">
+                  str = str + '<li class="';
+                  str = str + 'list-group-item';
+                  str = str + '" onClick=';
+                  str = str + '"show_new(';
+                  str = str + i;
+                  str = str + ');">';
+                  str = str + '<a href="';
+                  str = str + '#';
+                  str = str + '">';
+                  // 生成图标
+                  str = str + '<span class="';
+                  str = str + 'glyphicon glyphicon-list-alt';
+                  str = str + '">';
+                  //加入新闻标题
+                  str = str + '&nbsp;'+json[i].title;
+                  str = str + '</span>';
+                  // 生成samll标签
+                  str = str + '<small class="';
+                  str = str + 'pull-right';
+                  str = str + '">';
+                  // 生成发表日期
+                  str = str + json[i].date;
+                  str = str + '</small></a></li>';
+                  document.write(str);
+                }
+              </script>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- page-wrapper结束 -->
+
+
+
+</body>
+</html>

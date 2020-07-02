@@ -1,0 +1,118 @@
+{__NOLAYOUT__}<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <script src="__PUBLIC__/Admin/js/jQuery.min.js"></script>
+<title>管理工作表状态</title>
+</head>
+
+<body onload="a()">
+ <div id="page-wrapper">
+    <div class="graphs">
+
+      <div class="panel panel-default">
+        <div class="panel-heading page-title">管理工作表状态</div>
+      </div>
+      
+      <div class="container">
+         <select name="display_type">
+           <option value="0">全部</option>
+           <option value="1">未完成</option>
+           <option value="2">已完成未审核</option>
+           <option value="3">接近截止日期</option>
+         </select>
+      </div>
+
+      <div class="container">
+                <table>
+                  <th>任务id</th><th>教师id</th><th>工作表id</th><th>教师状态</th><th>管理员状态</th>
+                  <?php $i=0;?>
+                  <foreach name="ds" item="d">
+                    <tr>
+                      <td>{$d['wsid']}</td>
+                      <td>{$d['tid']}</td>
+                      <td>{$d['swid']}</td>                      
+                      <td><button name="ts" value="{$d['tstatus']}" ></button></td>
+                     
+                      <td>
+                        <button name="as" id='<?php  echo $i;  $i++;?>' value="{$d['astatus']}" onclick="change_status({$d['wsid']},this.value,this.id)"></button>
+                      </td>
+                    </tr>  
+                  </foreach>
+                </table>
+      </div>
+    </div>
+  </div>
+  
+  <script type="text/javascript">
+    function a(status){
+     var ts_length = document.getElementsByName('ts').length;
+      for (var i = 0; i <ts_length; i++) {
+        var ts_value = document.getElementsByName('ts')[i].value;
+        tv(ts_value,i);
+        
+        var as_value = document.getElementsByName('as')[i].value;
+        av(as_value,i);
+
+      }    
+    }
+
+    var av=function(as_value,i){
+        console.log(as_value);
+       if(as_value=="0"){
+          document.getElementsByName('as')[i].innerHTML="待提交";
+        }else if(as_value=="1"){
+          document.getElementsByName('as')[i].innerHTML="待审核";
+        }else if(as_value=="2"){
+          document.getElementsByName('as')[i].innerHTML="审核通过";
+        }else if(as_value=="3"){
+          document.getElementsByName('as')[i].innerHTML="审核不通过";
+        }else{
+          //alert('err');
+        }
+    }
+
+    var tv=function(ts_value,i){
+        if(ts_value=="0"){
+          document.getElementsByName('ts')[i].innerHTML="未提交";
+        }else if(ts_value=="1"){
+          document.getElementsByName('ts')[i].innerHTML="已提交未审核";
+        }else if(ts_value=="2"){
+          document.getElementsByName('ts')[i].innerHTML="完成";
+        }else{
+          //alert('err');
+        }
+    }
+
+    //ajax
+    function change_status(mession_id,status,id){
+         var xmlhttp;
+         if(window.XMLHttpRequest)
+         {
+          xmlhttp=new XMLHttpRequest(); // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+         }else{
+          xmlhttp=new ActiveXObject("Microsoft.XMLHttp"); // IE6, IE5 浏览器执行代码
+         }
+         xmlhttp.onreadystatechange=function(){ 
+          if(xmlhttp.readyState==4&&xmlhttp.status==200){
+            //document.getElementsById(id).innerHTML="审核通过";
+            var arr=JSON.parse(xmlhttp.responseText);
+            //alert(typeof(arr));
+
+            tv(arr['t_status'],id);
+            document.getElementsByName('ts')[id].value=arr['t_status'];
+            av(arr['a_status'],id);
+            document.getElementsByName('as')[id].value=arr['a_status'];
+            //alert(xmlhttp.responseText);
+            //alert(id);
+          }
+         }
+         xmlhttp.open('GET','__CONTROLLER__/ajax_change_status?mession_id='+mession_id+'&status='+status+'&',true);
+         xmlhttp.send();
+         //xmlhttp.close();
+
+    }
+  </script>
+  <!-- page-wrapper结束 -->
+</body>
+</html>
